@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Context path="/">
+
+	<Resource name="jdbc/bmg" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/bmg_local"
+		username="bmg_user" password="bmg_user" maxActive="20" maxIdle="10"
+		maxWait="-1" validationQuery="SELECT 1" testOnBorrow="true"
+		removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true" />
+		
+</Context>
