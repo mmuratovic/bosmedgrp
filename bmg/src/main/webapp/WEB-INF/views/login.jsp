@@ -40,9 +40,10 @@
 </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
- 
-	<h1 class="center">Bosnian Media Group - Admin</h1>
- 
+ 	<div  class="center">
+		<h1>Bosnian Media Group - Admin</h1>
+	 	<a href="/STL/home">Home Page</a>
+ 	</div>
 	<div id="login-box">
  
 		<h3>Login with Username and Password</h3>

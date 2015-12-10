@@ -41,8 +41,23 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<welcome-file-list>
+		<welcome-file>home.jspx</welcome-file>
+	</welcome-file-list>
 
- 
+	<error-page>
+		<error-code>403</error-code>
+		<location>/login</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/home</location>
+	</error-page>
 
+	<error-page>
+		<error-code>405</error-code>
+		<location>/login</location>
+	</error-page>
 
 </web-app>

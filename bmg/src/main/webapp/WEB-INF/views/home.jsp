@@ -9,6 +9,10 @@
 	Bosnian Media Group - home page!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<p>  The time on the server is ${serverTime}. </p>
+
+
+<a href="/STL/login">Login</a>
+
 </body>
 </html>
