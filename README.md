@@ -1,2 +1,0 @@
-# bosmedgrp
-website for bmg
