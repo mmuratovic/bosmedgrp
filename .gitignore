@@ -8,5 +8,14 @@
 *.war
 *.ear
 
+bmg/.settings/.jsdtscope
+bmg/.settings/org.eclipse.jdt.core.prefs
+bmg/.settings/org.eclipse.m2e.core.prefs
+bmg/.settings/org.eclipse.wst.common.component
+bmg/.settings/org.eclipse.wst.common.project.facet.core.xml
+bmg/.settings/org.eclipse.wst.validation.prefs
+
+
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
