@@ -1,5 +1,5 @@
 .metadata
-Servers
+Servers/
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -10,8 +10,11 @@ Servers
 *.war
 *.ear
 
-bmg/.settings/*
-bmg/.classpath
+.settings/
+*.classpath
+.project
+target/
+
 
 
 
