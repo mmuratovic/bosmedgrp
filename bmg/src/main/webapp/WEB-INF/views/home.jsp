@@ -12,7 +12,7 @@
 <p>  The time on the server is ${serverTime}. </p>
 
 
-<a href="/STL/login">Login</a>
+<a href="/news/login">Login</a>
 
 </body>
 </html>
