@@ -10,12 +10,9 @@ Servers
 *.war
 *.ear
 
-bmg/.settings/.jsdtscope
-bmg/.settings/org.eclipse.jdt.core.prefs
-bmg/.settings/org.eclipse.m2e.core.prefs
-bmg/.settings/org.eclipse.wst.common.component
-bmg/.settings/org.eclipse.wst.common.project.facet.core.xml
-bmg/.settings/org.eclipse.wst.validation.prefs
+bmg/.settings/*
+bmg/.classpath
+
 
 
 
