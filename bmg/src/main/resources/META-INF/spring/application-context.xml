@@ -5,6 +5,30 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		<import resource="classpath:/META-INF/spring/spring-security-context.xml" />
+	
+	<bean id="webPlaceholderProperties"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:META-INF/spring/*.properties</value>
+				<!-- <value>classpath*:META-INF/config/${com.bosnianmediagroup.environment}/*.properties</value> -->	
+			</list>
+		</property>
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="order" value="1" />
+	</bean>
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/i18n/labels</value>
+				<value>WEB-INF/i18n/messages</value>
+				<!-- <value>WEB-INF/i18n/${com.bosnianmediagroup.environment}/googleAnalytics</value> -->
+			</list>
+		</property>
+	</bean>
 		
 		<!-- DATASOURCES -->
 	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/displayboards"/> -->

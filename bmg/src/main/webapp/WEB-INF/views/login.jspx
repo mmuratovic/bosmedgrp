@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"  
+		  xmlns:tag="urn:jsptagdir:/WEB-INF/tags"
+		  xmlns:spring="http://www.springframework.org/tags"
+		  xmlns:c="http://java.sun.com/jsp/jstl/core"
+		  version="2.0" >
+		  
+	<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat"/>
+		  
+	<jsp:directive.page contentType="text/html; charset=UTF-8" language="java"/>
+	
+	<!-- Spring Urls -->
+	<spring:url value="/j_spring_security_check" var="url_login" />
+	<!-- Spring Messages -->
+	<spring:message var="admin_greeting" code="title.bosnianmediagroup.admin"></spring:message>
+	<spring:message var="login_title" code="title.bosnianmediagroup.login"></spring:message>
+	
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+			<title>${login_title}</title>
+		</head>
+		
+		<body onload='document.loginForm.username.focus();'>
+			<div  class="login-page-center">
+				<h1>${admin_greeting}</h1>
+				<a href="/news/home">Home Page</a>
+			</div>
+			
+			<div id="login-box">
+				<h3>Login with Username and Password</h3>
+				
+				<c:if test="${not empty error}">
+					<div class="login-error">${error}</div>
+				</c:if>
+				<c:if test="${not empty msg}">
+					<div class="login-msg">${msg}</div>
+				</c:if>
+				
+				<form name='loginForm' action="${url_login}" method='POST'>
+					<table>
+						<tr>
+							<td>User:</td>
+							<td><input type='text' name='username' value=''/></td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><input type='password' name='password' /></td>
+						</tr>
+						<tr>
+							<td colspan='2'><input name="submit" type="submit" value="submit" /></td>
+						</tr>
+					</table>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				</form>
+				
+			</div>
+		</body>
+	</html>
+	</jsp:root>

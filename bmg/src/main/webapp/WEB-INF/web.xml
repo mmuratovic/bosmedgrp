@@ -43,4 +43,11 @@
     <error-code>405</error-code>
     <location>/login</location>
   </error-page>
+  <jsp-config>
+	  <jsp-property-group>
+	    <url-pattern>*.jspx</url-pattern>
+	    <trim-directive-whitespaces>true</trim-directive-whitespaces>
+	  </jsp-property-group>
+  </jsp-config>
+  
 </web-app>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"  
+		  xmlns:tag="urn:jsptagdir:/WEB-INF/tags"
+		  xmlns:spring="http://www.springframework.org/tags"
+		  xmlns:c="http://java.sun.com/jsp/jstl/core"
+		  version="2.0" >
+		  	
+	<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat"/>
+		  
+	<jsp:directive.page contentType="text/html; charset=UTF-8" language="java"/>
+	<!-- Spring Messages -->
+	<spring:message var="title" code="title.bosnianmediagroup"></spring:message>
+	<!-- Spring URLs -->
+	<spring:url value="/login" var="login_link" />
+	<spring:url value="/resources/js/vendor/jquery-1.11.3.js" var="url_js_jquery" />
+	<spring:url value="/resources/js/vendor/bootstrap.js" var="url_bootstrap" />
+	
+	<!-- Styles -->
+    <spring:url value="/resources/css/bootstrap.css" var="url_css_bootstrap" />
+    <spring:url value="/resources/css/bootstrap-theme.css" var="url_css_bootstrap_theme" />
+    <spring:url value="/resources/css/main.css" var="url_css_main" />
+    <spring:url value="/resourcesfont-awesome-4.3.0/css/font-awesome.min.css" var="font-awesome" />
+ 
+
+	<html>
+		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta charset="utf-8" />
+			<meta http-equiv="cache-control" content="max-age=0" />
+			<meta http-equiv="cache-control" content="no-cache" />
+			<meta http-equiv="expires" content="-1" />
+			<meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT" />
+			<meta http-equiv="pragma" content="no-cache" /> 
+			
+			<link rel="stylesheet" href="${url_css_bootstrap}" />
+			<link rel="stylesheet" href="${url_css_bootstrap_theme}" />
+			<link rel="stylesheet" href="${url_css_main}" />
+			<link rel="stylesheet" href="${font-awesome}" />
+			
+			<script type="text/javascript" src="${url_js_jquery}">//FIX</script>
+			<script type="text/javascript" src="${url_bootstrap}">//FIX</script>
+			
+			<script type="text/javascript">
+		    	$.ajaxSetup({
+		    		cache: false
+		    	});
+	    	</script>
+			
+			<title>${title}</title>
+		</head>
+		
+		<body>
+		    <nav class="navbar navbar-default no-margin">
+    <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header fixed-brand">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
+                      <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SEEGATESITE</a>
+                </div><!-- navbar-header-->
+ 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
+                            </ul>
+                </div><!-- bs-example-navbar-collapse-1 -->
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+ 
+                <li class="active">
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
+                       <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
+                    <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
+                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
+ 
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Overview</a>
+                </li>
+                <li>
+                    <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Events</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+                </li>
+            </ul>
+        </div><!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid xyz">
+                <div class="row">
+                    	<div class="col-md-6">
+					<h3>
+						Bosnian Media Group - home page!  
+					</h3>
+					<p>  The time on the server is ${serverTime}. </p>
+				</div>
+				<div class="col-md-6">
+					<a href="${login_link}">Login</a>
+				</div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+   
+		
+			
+		</body>
+		<script type="text/javascript">
+		
+		$("#menu-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled");
+	    });
+	     $("#menu-toggle-2").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled-2");
+	        $('#menu ul').hide();
+	    });
+	 
+	     function initMenu() {
+	      $('#menu ul').hide();
+	      $('#menu ul').children('.current').parent().show();
+	      //$('#menu ul:first').show();
+	      $('#menu li a').click(
+	        function() {
+	          var checkElement = $(this).next();
+	          if((checkElement.is('ul')) &amp;&amp; (checkElement.is(':visible'))) {
+	            return false;
+	            }
+	          if((checkElement.is('ul')) &amp;&amp; (!checkElement.is(':visible'))) {
+	            $('#menu ul:visible').slideUp('normal');
+	            checkElement.slideDown('normal');
+	            return false;
+	            }
+	          }
+	        );
+	      }
+	    $(document).ready(function() {initMenu();});
+		</script>
+	</html>
+	
+</jsp:root>
