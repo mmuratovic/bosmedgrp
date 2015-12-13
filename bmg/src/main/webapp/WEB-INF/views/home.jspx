@@ -8,12 +8,30 @@
 	<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat"/>
 		  
 	<jsp:directive.page contentType="text/html; charset=UTF-8" language="java"/>
+	
 	<!-- Spring Messages -->
 	<spring:message var="title" code="title.bosnianmediagroup"></spring:message>
+	
 	<!-- Spring URLs -->
 	<spring:url value="/login" var="login_link" />
+	
 	<spring:url value="/resources/js/vendor/jquery-1.11.3.js" var="url_js_jquery" />
-	<spring:url value="/resources/js/vendor/bootstrap.js" var="url_bootstrap" />
+	<spring:url value="/resources/js/vendor/bootstrap.min.js" var="url_bootstrap" />
+	<spring:url value="/resources/js/vendor/jquery-migrate-1.2.1.min.js" var="url_js_jquery_migrate" />
+	<spring:url value="/resources/js/vendor/respond.js" var="url_respond" />
+	<spring:url value="/resources/js/vendor/angular.min.js" var="url_js_angular" />
+	<spring:url value="/resources/js/vendor/angular-route.min.js" var="url_js_angular_route" />
+	<spring:url value="/resources/js/vendor/angular-translate.js" var="url_js_angular_translate" />
+	<spring:url value="/resources/js/vendor/angular-sanitize.js" var="url_js_angular_sanitize" />
+	<spring:url value="/resources/js/vendor/angular-busy.js" var="url_js_angular_busy" />
+	<spring:url value="/resources/js/vendor/html5.js" var="url_js_html5" />
+	<spring:url value="/resources/js/vendor/ui-router.js" var="url_js_ui_router" />
+	<spring:url value="/resources/js/vendor/ui-bootstrap-tpls-0.11.0.min.js" var="url_bootstrap_tpls" />
+	<spring:url value="/resources/js/vendor/stateMock.js" var="url_state_mock" />
+	<spring:url value="/resources/js/vendor/angular-shims-placeholder.js" var="url_angular_shims" />
+
+	<spring:url value="/resources/js/app.js" var="url_js_app" />
+	<spring:url value="/resources/js/controllers/MainController.js" var="url_js_mainController" />
 	
 	<!-- Styles -->
     <spring:url value="/resources/css/bootstrap.css" var="url_css_bootstrap" />
@@ -22,7 +40,7 @@
     <spring:url value="/resources/font-awesome-4.5.0/css/font-awesome.min.css" var="url_font_awesome" />
     <spring:url value="/resources/img/logo.png" var="img_logo" />
 
-	<html>
+	<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="bmgApp">
 		<head>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,13 +52,72 @@
 			<link rel="stylesheet" href="${url_css_main}" />
 			<link rel="stylesheet" href="${url_font_awesome}" />
 			
-			<script type="text/javascript" src="${url_js_jquery}"><!-- fix --></script>
-			<script type="text/javascript" src="${url_bootstrap}"><!-- fix --></script>
+			<script type="text/javascript" src="${url_js_jquery}">//FIX</script>
+			<script type="text/javascript" src="${url_js_jquery_migrate}">//FIX</script>
+			<script type="text/javascript" src="${url_respond}">//FIX</script>
+			<script type="text/javascript" src="${url_bootstrap}">//FIX</script>
+			<script type="text/javascript" src="${url_js_angular}">//FIX</script>
+			<script type="text/javascript" src="${url_js_angular_busy}">//FIX</script>
+			<script type="text/javascript" src="${url_js_angular_route}">//FIX</script>
+			<script type="text/javascript" src="${url_js_angular_translate}">//FIX</script>
+			<script type="text/javascript" src="${url_bootstrap_tpls}">//FIX</script>
+			<script type="text/javascript" src="${url_js_ui_router}">//FIX</script>
+			<script type="text/javascript" src="${url_js_angular_sanitize}">//FIX</script>
+			<script type="text/javascript" src="${url_js_html5}">//FIX</script>
+			<script type="text/javascript" src="${url_bootstrap_tpls}">//FIX</script>
+			<script type="text/javascript" src="${url_state_mock}">//FIX</script>
+			<script type="text/javascript" src="${url_angular_shims}">//FIX</script>
+			
+			<script type="text/javascript" src="${url_js_app}">//FIX</script>
+			<script type="text/javascript" src="${url_js_mainController}">//FIX</script>
+			
+			<script>
+	          document.createElement('ng-disabled');
+	          document.createElement('ng-mouseenter');
+	          document.createElement('ng-mouseleave');
+	          document.createElement('ng-if');
+	          document.createElement('ng-cloak');
+	          document.createElement('ng-include');
+	          document.createElement('ng-pluralize');
+	          document.createElement('ng-view');
+	          document.createElement('ng-repeat');
+	          document.createElement('ng-submit');
+	          document.createElement('ng-focus');
+	          document.createElement('ng-init');
+	          document.createElement('ng-bind');
+	          document.createElement('ng-route');
+	          document.createElement('ng-click');
+	          document.createElement('ng-show');
+	          document.createElement('ng-src');
+	          document.createElement('ng-href');
+	          document.createElement('ng-hide');
+	          document.createElement('ng-checked');
+	          document.createElement('ng-options');
+	          document.createElement('ng-model');
+	          document.createElement('ui-view');
+	          document.createElement('csv-header');
+	          document.createElement('filename');
+	          document.createElement('popover-trigger');
+	          document.createElement('popover');
+	
+	          // Optionally these for CSS
+	          document.createElement('ng:include');
+	          document.createElement('ng:pluralize');
+	          document.createElement('ng:view');
+	          document.createElement('ng:class');
+
+        </script>
+        
+    	 <script type="text/javascript">
+	    	$.ajaxSetup({
+	    		cache: false
+	    	});
+	    </script>
 			<title>${title}</title>
 		</head>
 		
 		<body>
-			<div class="row row-border">
+			<div class="row row-border" ng-controller="MainController">
 				<div class="col-sm-10 col-xs-10 col-md-4 logo_div">
 					<span class="logo">bosnian media group</span>
 				</div>
@@ -55,7 +132,7 @@
 					<ul class="sidebar-nav nav-pills nav-stacked container" id="menu">
 						<li class="row"></li>
 						<li class="row bar-button">
-							<a href="#">
+							<a ng-click="loadRoute('about')" href="#/about">
 								<span class="col-md-2 center"><i class="center-fa fa fa-circle-o fa-2x"><!-- icon --></i></span>
 								<span class="col-md-10">About Us</span>
 							</a>
@@ -79,7 +156,7 @@
 							</a>
 						</li>
 						<li class="row bar-button">
-							<a href="#">
+							<a ng-click="loadRoute('latest')" href="#/latest">
 								<span class="col-md-2 center"><i class="fa fa-newspaper-o fa-2x center-fa"><!-- icon --></i></span>
 								<span class="col-md-10">News</span>
 							</a>
@@ -100,17 +177,8 @@
 				</div>
 		        <div id="page-content-wrapper">
 		            <div class="container-fluid xyz">
-		                <div class="row">
-		                    	<div class="col-md-6">
-							<h3>
-								Bosnian Media Group - home page!  
-							</h3>
-							<p>  The time on the server is ${serverTime}. </p>
-						</div>
-						<div class="col-md-6">
-							<a href="${login_link}">Login</a>
-						</div>
-		                </div>
+		                <div ui-view="latest"><!-- FIX --></div>
+		                <div ui-view="about"><!-- FIX --></div>
 		            </div>
 				</div>
 	        </div>

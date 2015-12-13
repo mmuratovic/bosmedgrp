@@ -109,6 +109,7 @@
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
+        overflow-x: hidden; 
         
     }
     .fixed-brand{
@@ -175,10 +176,9 @@
 		}
 	.logo_div {
 		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-bottom: 15px;
 	}
 	.row-border{
-		border-bottom: solid 1px #999999;
 		box-shadow: 5px 0px 5px #888888;
 	}
 }
@@ -203,7 +203,6 @@
 	}
 	.row-border{
 		margin-top: 1px;
-		border-bottom: solid 1px #999999;
 		box-shadow: 5px 0px 5px #888888;
 	}
 }

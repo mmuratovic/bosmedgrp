@@ -16,6 +16,7 @@
 
 	<view-controller path="/login" />
 	<view-controller path="/admin" />
+	<view-controller path="/home" />
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
