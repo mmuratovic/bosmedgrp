@@ -15,14 +15,15 @@
 }
  
 #sidebar-wrapper {
-    z-index: 1000;
+ 	z-index: 1000;
     position: absolute; 
     left: 250px;
     width: 0;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #2a5892;
+    border-color: #142a46;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -68,13 +69,17 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #9dbce3;
 }
  
+.bar-button hover {
+	color: white;
+}
 .sidebar-nav li a:hover {
+	z-index: 5000;
     text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    color: #dae6f4;
+    background: rgba(0,0,255,0.2);
     border-left: red 2px solid;
 }
  
@@ -104,9 +109,10 @@
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
+        
     }
     .fixed-brand{
-        width: 250px;
+        width: auto;
     }
     #wrapper.toggled {
         padding-left: 0;
@@ -114,6 +120,7 @@
  
     #sidebar-wrapper {
         width: 250px;
+        box-shadow: 3px 0px 5px #888888;
     }
  
     #wrapper.toggled #sidebar-wrapper {
@@ -152,6 +159,53 @@
         width: auto;
  
     }
+    .logo {
+		text-shadow: 1px 1px 5px rgba(5,2,48,0.8);
+		font-weight: normal;
+		color: #2A5892;
+		letter-spacing: 0pt;
+		word-spacing: -1pt;
+		font-size: 3em;
+		text-align: left;
+		font-family: georgia, serif;
+		line-height: 1;
+		padding-left: 10px;
+		padding-right: 10px;
+		white-space: nowrap;
+		}
+	.logo_div {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.row-border{
+		border-bottom: solid 1px #999999;
+		box-shadow: 5px 0px 5px #888888;
+	}
+}
+
+@media(max-width:767px) {
+	.logo {
+		text-shadow: 1px 1px 5px rgba(5,2,48,0.8);
+		font-weight: normal;
+		color: #2A5892;
+		letter-spacing: 0pt;
+		word-spacing: -1pt;
+		font-size: 2em;
+		text-align: left;
+		font-family: georgia, serif;
+		line-height: 1;
+		padding-left: 20px;
+		white-space: nowrap;
+		}
+	.logo_div {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.row-border{
+		margin-top: 1px;
+		border-bottom: solid 1px #999999;
+		box-shadow: 5px 0px 5px #888888;
+	}
 }
 
 .login-error {
@@ -188,3 +242,15 @@
 	padding: 50px;
 	text-align: center;
 }
+
+.center-fa {
+    margin-right: 23px;
+    margin-left: -35px;
+    padding-top: 3px;
+    width: 50px;
+}
+
+.center {
+	text-align: center;
+}
+
