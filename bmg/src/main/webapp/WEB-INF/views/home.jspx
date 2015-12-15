@@ -117,73 +117,23 @@
 		</head>
 		
 		<body>
-			<div class="row row-border" ng-controller="MainController">
-				<div class="col-sm-10 col-xs-10 col-md-4 logo_div">
-					<span class="logo">bosnian media group</span>
-				</div>
-				<div class="col-sm-2 col-xs-2">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
-						<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-					</button>
-				</div>
-			</div>
-			<div id="wrapper">
-				<div id="sidebar-wrapper">
-					<ul class="sidebar-nav nav-pills nav-stacked container" id="menu">
-						<li class="row"></li>
-						<li class="row bar-button">
-							<a ng-click="loadRoute('about')" href="#/about">
-								<span class="col-md-2 center"><i class="center-fa fa fa-circle-o fa-2x"><!-- icon --></i></span>
-								<span class="col-md-10">About Us</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a href="#">
-								<span class="col-md-2 center"><i class="fa fa-object-group fa-2x center-fa"><!-- icon --></i></span>
-								<span class="col-md-10">Advertisement Service</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a href="#">
-								<span class="col-md-2 center"><i class="fa fa-language fa-2x center-fa"><!-- icon --></i></span>
-								<span class="col-md-10">Translation Service</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a href="#">
-								<span class="col-md-2 center"><i class="fa fa-envelope-o fa-2x center-fa"><!-- icon --></i>
-								</span><span class="col-md-10">Contact Us</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a ng-click="loadRoute('latest')" href="#/latest">
-								<span class="col-md-2 center"><i class="fa fa-newspaper-o fa-2x center-fa"><!-- icon --></i></span>
-								<span class="col-md-10">News</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a href="#">
-								<span class="col-md-2 center"><i class="fa fa-microphone fa-2x center-fa"><!-- icon --></i></span>
-								<span class="col-md-10">Radio Behar</span>
-							</a>
-						</li>
-						<li class="row bar-button">
-							<a href="#">
-								<span class="col-md-2 center"><i class="fa fa-headphones fa-2x center-fa"><!-- icon --></i></span>
-								<span class="col-md-10">Listen LIVE</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div id="main-content">
-			        <div id="page-content-wrapper">
-			            <div class="container-fluid xyz">
-			                <div ui-view="latest"><!-- FIX --></div>
+			<div id="main-page">
+				<div id="page-content">
+					<div id="header-content" class="logo_div row-border">
+						<div class="max-page-width">
+							<span class="logo">bosnian media group</span>
+						</div>
+					</div>
+					<div id="main-content" class=" max-page-width" ng-controller="MainController">
+			            <div class="container-fluid">
 			                <div ui-view="about"><!-- FIX --></div>
 			            </div>
+			        </div>
+			        <div id="footer-content" class="">
+						<span class="">footer bosnian media group</span>
 					</div>
-				</div>
-	        </div>
+		        </div>
+			</div>
 		</body>
 		<script type="text/javascript">
 		
@@ -191,30 +141,7 @@
 		        e.preventDefault();
 		        $("#wrapper").toggleClass("toggled");
 		    });
-			     
-			$("#sidebar-wrapper").click(function() {
-			    $("#wrapper").toggleClass("toggled");
-			    $('#menu ul').hide();
-			});
-			
-			function initMenu() {
-				$("#wrapper").toggleClass("toggled-2");
-				$('#menu ul').hide();
-				$('#menu ul').children('.current').parent().show();
-				$('#menu li a').click(
-					function() {
-						var checkElement = $(this).next();
-						if((checkElement.is('ul')) &amp;&amp; (checkElement.is(':visible'))) {
-							return false;
-						}
-						if((checkElement.is('ul')) &amp;&amp; (!checkElement.is(':visible'))) {
-							$('#menu ul:visible').slideUp('normal');
-							checkElement.slideDown('normal');
-							return false;
-						}
-					}
-				);
-			}
+		
 		 
 			$(document).ready(function() {
 				initMenu();
