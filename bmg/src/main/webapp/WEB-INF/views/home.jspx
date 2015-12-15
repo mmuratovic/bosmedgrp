@@ -175,11 +175,13 @@
 						</li>
 					</ul>
 				</div>
-		        <div id="page-content-wrapper">
-		            <div class="container-fluid xyz">
-		                <div ui-view="latest"><!-- FIX --></div>
-		                <div ui-view="about"><!-- FIX --></div>
-		            </div>
+				<div id="main-content">
+			        <div id="page-content-wrapper">
+			            <div class="container-fluid xyz">
+			                <div ui-view="latest"><!-- FIX --></div>
+			                <div ui-view="about"><!-- FIX --></div>
+			            </div>
+					</div>
 				</div>
 	        </div>
 		</body>

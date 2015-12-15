@@ -33,14 +33,21 @@
     width: 250px;
 }
  
+#main-content {
+	text-align: center;
+}
+
 #page-content-wrapper {
+	border: solid red 1px;
     position: absolute;
     padding: 15px;
-    width: 100%;  
+    max-width: 1200px;  
     overflow-x: hidden; 
+}
 }
 .xyz{
     min-width: 360px;
+    font-family: 'Open Sans', sans-serif !important;
 }
 #wrapper.toggled #page-content-wrapper {
     position: relative;
@@ -58,7 +65,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-top: 2px;
 }
  
 .sidebar-nav li {
@@ -162,15 +168,15 @@
     }
     .logo {
 		text-shadow: 1px 1px 5px rgba(5,2,48,0.8);
-		font-weight: normal;
+		font-weight: 500;
 		color: #2A5892;
 		letter-spacing: 0pt;
 		word-spacing: -1pt;
 		font-size: 3em;
 		text-align: left;
-		font-family: georgia, serif;
+		font-family: Calibri, Helvetica, sans-serif !important;
 		line-height: 1;
-		padding-left: 10px;
+		padding-left: 15px;
 		padding-right: 10px;
 		white-space: nowrap;
 		}
@@ -185,20 +191,20 @@
 
 @media(max-width:767px) {
 	.logo {
+		font-family: Calibri, Helvetica, sans-serif !important;
 		text-shadow: 1px 1px 5px rgba(5,2,48,0.8);
-		font-weight: normal;
+		font-weight: 400;
 		color: #2A5892;
 		letter-spacing: 0pt;
 		word-spacing: -1pt;
 		font-size: 2em;
 		text-align: left;
-		font-family: georgia, serif;
 		line-height: 1;
 		padding-left: 20px;
 		white-space: nowrap;
 		}
 	.logo_div {
-		padding-top: 10px;
+		padding-top: 13px;
 		padding-bottom: 10px;
 	}
 	.row-border{
@@ -252,4 +258,71 @@
 .center {
 	text-align: center;
 }
+
+
+/*content-page*/
+
+.section-header {
+	text-align:center;
+	/* vertical-align:text-top; */
+	height: 50px;
+}
+
+.section-header h2{
+	margin: 0px;
+}
+
+.box-out {
+	background: #f2f2f2;
+	padding: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.box-ins {
+    padding-top: 5px !important;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.container-img {
+	display: flex;
+    justify-content: center;
+	overflow: hidden;
+	
+}
+.small-pic {
+	max-height: 200px;
+}
+
+.big-pic{
+	max-height: 300px;
+}
+
+.small-pic img {
+	
+	width: auto:
+}
+
+.big-pic img {
+	width: auto;
+}
+
+.margin-left-right{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.source-line {
+	float:right; 
+	font-size:10px;
+}
+
+.section {
+	color: #66666 !important;
+	font-family: Calibri, Helvetica, sans-serif !important;
+}
+
+
 
