@@ -8,40 +8,46 @@
 
 #main-content {
 	max-width: 1400px;
-
 }
 
 #header-content {
+	z-index: 1;
+	position: fixed;
+	top: 0px;
+	height: auto;
 	width: 100%;
-
+	background-color: #1c3c63;
 }
 
 .max-page-width {
 	max-width: 1400px;
-    margin: 0 auto;
+	margin: 0 auto;
 }
-
 
 #footer-content {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 70px;
-  background-color: white;
-  width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: auto;
+	color: white;
+	background-color: #1c3c63;
+	width: 100%;
+
+	text-align: left;
+	font-family: Calibri, Helvetica, sans-serif !important;
 }
 
-div{
+/* div{
 	border:solid red 1px;
-}
+} */
 
 .logo {
 	text-shadow: 1px 1px 5px rgba(5,2,48,0.8);
 	font-weight: 500;
-	color: #2A5892;
+	color: white;
 	letter-spacing: 0pt;
 	word-spacing: -1pt;
-	font-size: 3em;
+	font-size: 2em;
 	text-align: left;
 	font-family: Calibri, Helvetica, sans-serif !important;
 	line-height: 1;
@@ -101,6 +107,14 @@ div{
     width: 50px;
 }
 
+.space-fa {
+	padding-right: 3px;
+}
+
+.fa-cog {
+  color: white;
+}
+
 .center {
 	text-align: center;
 }
@@ -125,6 +139,7 @@ div{
     margin-right: -10px;
     box-shadow: 0 0 5px #ccc;
 }
+
 
 .box-ins {
     padding-top: 5px !important;
@@ -165,10 +180,15 @@ div{
 	font-size:10px;
 }
 
+.pull-right{
+	float: right;
+}
+
+.right {
+	text-align:right;
+}
+
 .section {
 	color: #66666 !important;
 	font-family: Calibri, Helvetica, sans-serif !important;
 }
-
-
-
