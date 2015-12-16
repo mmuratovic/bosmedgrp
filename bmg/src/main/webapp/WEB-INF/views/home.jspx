@@ -53,9 +53,8 @@
 			
 			
 			<link rel="stylesheet" href="${url_css_bootstrap}" />
-			<link rel="stylesheet" href="${url_css_bootstrap_theme}" />
-			<link rel="stylesheet" href="${url_css_main}" />
 			<link rel="stylesheet" href="${url_font_awesome}" />
+			<link rel="stylesheet" href="${url_css_main}" />
 			
 			<script type="text/javascript" src="${url_js_jquery}">//FIX</script>
 			<script type="text/javascript" src="${url_js_jquery_migrate}">//FIX</script>
@@ -124,16 +123,34 @@
 		<body>
 			<div id="main-page">
 				<div id="page-content">
-					<div id="header-content" class="logo_div row-border">
-						<div class="max-page-width row">
-							<div class="col-md-12">
-								<span class="logo">${logo}</span>
-								<span class="pull-right">
-									<i class="space-fa fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i>
-									<i class="space-fa fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i>
-								</span>
+					<div id="header-content">
+						<nav class="navbar navbar-fixed-top navbar-default">
+							<div class="max-page-width">
+								<div class="container-fluid">
+									<div class="navbar-header">
+										<span class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bmg-navbar-collapse" aria-expanded="false">
+											<i class="fa-cog fa fa-bars fa-2x"><!-- icon --></i>
+										</span>
+										<a class="navbar-brand middle-align" href="#">
+											<span class="logo">${logo}</span>
+										</a>
+									</div>
+									<div class="collapse navbar-collapse" id="bmg-navbar-collapse">
+										<ul class="nav navbar-nav navbar-right">
+											<li><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></li>
+											<li><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></li>
+											<li><a href="#/about">News</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">Radio</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">Services</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">Contact</a></li>
+										</ul>
+									</div>
+								</div>
 							</div>
-						</div>
+						</nav>
 					</div>
 					<div id="main-content" class="max-page-width" ng-controller="MainController">
 			            <div class="container-fluid">
@@ -143,9 +160,9 @@
 			        <div id="footer-content">
 			        	<div class="max-page-width row">
 				        	<div class="col-md-4">
-				        		<div><i class="space-fa fa fa-envelope"><!-- icon --></i>${address}</div>
-				        		<div><i class="space-fa fa fa-phone-square"><!-- icon --></i> ${phone}</div>
-				        		<div><i class="space-fa fa fa-envelope-o"><!-- icon --></i> ${email}</div>
+				        		<div><i class="right-space-fa fa fa-envelope"><!-- icon --></i>${address}</div>
+				        		<div><i class="right-space-fa fa fa-phone-square"><!-- icon --></i> ${phone}</div>
+				        		<div><i class="right-space-fa fa fa-envelope-o"><!-- icon --></i> ${email}</div>
 				        	</div>
 				        	<div class="col-md-offset-4 col-md-4 right">
 				        		<i class="space-fa fa fa-copyright"><!-- icon --></i>${copyrights}
@@ -156,17 +173,17 @@
 			</div>
 		</body>
 		<script type="text/javascript">
-		
-			$("#menu-toggle").click(function(e) {
-		        e.preventDefault();
-		        $("#wrapper").toggleClass("toggled");
-		    });
-		
-		 
 			$(document).ready(function() {
-				initMenu();
+				$(".nav a").on("click", function(){
+				   $(".nav").find(".active").removeClass("active");
+				   $(this).parent().addClass("active");
+				});
 			});
-			
+			$(document).on('click','.navbar-collapse.in',function(e) {
+			    if( $(e.target).is('a') ) {
+			        $(this).collapse('hide');
+			    }
+			});
 		</script>
 	</html>
 </jsp:root>
