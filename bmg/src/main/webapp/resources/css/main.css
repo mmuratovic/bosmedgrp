@@ -263,12 +263,34 @@ span {
 	.navbar-default .navbar-toggle {
 		border-color: transparent;
 	}
+	
+	.navbar-collapse .nav > .divider-vertical {
+        display: none;
+     }
+     
+     .navbar-right .divider {
+		border-bottom: 1px solid #ffffff;
+		z-index: 2000;
+}
 }
 
 .navbar{ 
     background-image: none;
+    margin-bottom: 0;
 }
 
 .no-wrap {
 	white-space: nowrap;
 }
+
+.navbar .divider-vertical {
+    height: 20px;
+    margin-top: 15px;
+    border-right: 1px solid #ffffff;
+}
+
+
+
+
+
+
