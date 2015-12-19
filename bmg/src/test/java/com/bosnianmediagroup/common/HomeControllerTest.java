@@ -24,7 +24,7 @@ public class HomeControllerTest {
 	@Test
 	public void home_method_returnsView_home() {
 		String expected = "home";
-		String actual = homeController.home(locale.US, model);
+		String actual = homeController.home(model);
 		Assert.assertEquals(expected, actual);
 	}
 	

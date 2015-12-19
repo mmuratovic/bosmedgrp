@@ -1,23 +1,20 @@
 body{
 	font-family: Calibri, Helvetica, sans-serif !important;
+	padding-top: 70px;
 }
 
 #main-page {
 	width:100%;
 }
 
-#page-content {
-	width:100%;
-}
-
 #main-content {
 	max-width: 1400px;
-	margin: 100px auto;
+	margin: auto;
 }
 
 .max-page-width {
 	max-width: 1400px;
-	margin: 0 auto;
+	margin: auto;
 }
 
 #footer-content {
@@ -120,8 +117,24 @@ span {
 
 .fa-cog {
   color: white;
+  outline: none;
 }
 
+.iconSpec {
+    display: inline-block;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+    margin-top: 12px;
+    outline: none;
+    cursor: pointer;
+    padding-left: 2px;
+}
+
+i:active, i:after {
+	outline: none;
+}
 .center {
 	text-align: center;
 }
@@ -271,7 +284,34 @@ span {
      .navbar-right .divider {
 		border-bottom: 1px solid #ffffff;
 		z-index: 2000;
-}
+	}
+	
+	.iconSpec {
+	    display: inline-block;
+	    height: 30px;
+	    overflow: hidden;
+	    position: relative;
+	    width: 30px;
+	    margin-top: 0px;
+	    margin-left: 15px;
+	}
+	
+	.liveSignClass {
+		content: "LIVE";
+		color: red !important;
+		font-weight: bold;
+		font-size: 20px;
+	    display: inline-block;
+	    height: 30px;
+	    overflow: hidden;
+	    position: relative;
+	    margin-top: 8px;
+	    outline: none;
+	    cursor: pointer;
+	    margin-left: 15px;
+	    padding-right: 10px;
+	}
+
 }
 
 .navbar{ 
@@ -287,6 +327,24 @@ span {
     height: 20px;
     margin-top: 15px;
     border-right: 1px solid #ffffff;
+}
+
+.playerRadio {
+	display:none;
+}
+
+.liveSignClass {
+	color: red !important;
+	font-weight: bold;
+	font-size: 20px;
+    display: inline-block;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    outline: none;
+    cursor: pointer;
+    padding-right: 10px;
 }
 
 

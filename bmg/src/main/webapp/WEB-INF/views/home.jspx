@@ -5,7 +5,8 @@
 		  xmlns:c="http://java.sun.com/jsp/jstl/core"
 		  version="2.0" >
 		  	
-	<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat"/>
+	<jsp:output doctype-root-element="HTML" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+        doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 		  
 	<jsp:directive.page contentType="text/html; charset=UTF-8" language="java"/>
 	
@@ -19,6 +20,7 @@
 	
 	<!-- Spring URLs -->
 	<spring:url value="/login" var="login_link" />
+	<spring:url value="/resources/js/home.js" var="js_url_home"/>
 	
 	<spring:url value="/resources/js/vendor/jquery-1.11.3.js" var="url_js_jquery" />
 	<spring:url value="/resources/js/vendor/bootstrap.min.js" var="url_bootstrap" />
@@ -103,6 +105,8 @@
 	          document.createElement('filename');
 	          document.createElement('popover-trigger');
 	          document.createElement('popover');
+	          document.createElement('controls');
+	          document.createElement('source');
 	
 	          // Optionally these for CSS
 	          document.createElement('ng:include');
@@ -122,63 +126,68 @@
 		
 		<body>
 			<div id="main-page">
-				<div id="page-content">
-					<div id="header-content">
-						<nav class="navbar navbar-fixed-top navbar-default">
-							<div class="max-page-width">
-								<div class="container-fluid">
-									<div class="navbar-header">
-										<span class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bmg-navbar-collapse" aria-expanded="false">
-											<i class="fa-cog fa fa-bars fa-2x"><!-- icon --></i>
-										</span>
-										<a class="navbar-brand middle-align" href="#">
-											<span class="logo">${logo}</span>
-										</a>
-									</div>
-									<div class="collapse navbar-collapse" id="bmg-navbar-collapse">
-										<ul class="nav navbar-nav navbar-right">
-											<li><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></li>
-											<li><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></li>
-											<li><a href="#/about">News</a></li>
-											<li role="separator" class="divider divider-vertical"></li>
-											<li><a href="#">Radio</a></li>
-											<li role="separator" class="divider divider-vertical"></li>
-											<li><a href="#">Services</a></li>
-											<li role="separator" class="divider divider-vertical"></li>
-											<li><a href="#">Contact</a></li>
-										</ul>
-									</div>
+		
+				<div id="header-content" class="row">
+					<nav class="navbar navbar-fixed-top navbar-default">
+						<div class="max-page-width">
+							<div class="container-fluid">
+								<div class="navbar-header">
+									<span class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bmg-navbar-collapse" aria-expanded="false">
+										<i class="fa-cog fa fa-bars fa-2x"><!-- icon --></i>
+									</span>
+									<a class="navbar-brand middle-align" href="#">
+										<span class="logo">${logo}</span>
+									</a>
+								</div>
+								<div class="collapse navbar-collapse" id="bmg-navbar-collapse">
+									<ul class="nav navbar-nav navbar-right">
+										<li>
+											<span id="liveSign"><!-- LIVE --></span>
+											<span id="playButton" class="iconSpec"><i class="fa-cog fa fa-play-circle-o fa-2x"><!-- icon --></i></span>
+										</li>
+										<li><a href="#">Radio Behar</a></li>
+										<li role="separator" class="divider divider-vertical"></li>
+										<li><a href="#/about">News</a></li>
+										<li role="separator" class="divider divider-vertical"></li>
+										<li><a href="#">Services</a></li>
+										<li role="separator" class="divider divider-vertical"></li>
+										<li><a href="#">Contact</a></li>
+										<li><span class="iconSpec"><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></span></li>
+										<li><span class="iconSpec"><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></span></li>
+										<div class="playerRadio">
+											<audio controls="controls" id="radioBeharPlayer" > 
+												<source src="http://wew.birach.com:9008/;"></source>
+											</audio>
+										</div>
+									</ul>
 								</div>
 							</div>
-						</nav>
-					</div>
-					<div id="main-content" class="max-page-width" ng-controller="MainController">
-			            <div class="container-fluid">
-			                <div ui-view="about"><!-- FIX --></div>
-			            </div>
-			        </div>
-			        <div id="footer-content">
-			        	<div class="max-page-width row">
-				        	<div class="col-md-4">
-				        		<div><i class="right-space-fa fa fa-envelope"><!-- icon --></i>${address}</div>
-				        		<div><i class="right-space-fa fa fa-phone-square"><!-- icon --></i> ${phone}</div>
-				        		<div><i class="right-space-fa fa fa-envelope-o"><!-- icon --></i> ${email}</div>
-				        	</div>
-				        	<div class="col-md-offset-4 col-md-4 right">
-				        		<i class="space-fa fa fa-copyright"><!-- icon --></i>${copyrights}
-				        	</div>
-						</div>		
-					</div>
+						</div>
+					</nav>
+				</div>
+		           
+				<div id="main-content" class="max-page-width row" ng-controller="MainController">
+		            <div class="container-fluid">
+		                <div ui-view="about"><!-- FIX --></div>
+		                <div ui-view="latest"><!-- FIX --></div>
+		            </div>
 		        </div>
+		        <div id="footer-content">
+		        	<div class="max-page-width row">
+			        	<div class="col-md-4">
+			        		<div><i class="right-space-fa fa fa-envelope"><!-- icon --></i>${address}</div>
+			        		<div><i class="right-space-fa fa fa-phone-square"><!-- icon --></i> ${phone}</div>
+			        		<div><i class="right-space-fa fa fa-envelope-o"><!-- icon --></i> ${email}</div>
+			        	</div>
+			        	<div class="col-md-offset-4 col-md-4 right">
+			        		<i class="space-fa fa fa-copyright"><!-- icon --></i>${copyrights}
+			        	</div>
+					</div>		
+				</div>
 			</div>
 		</body>
+		<script type="text/javascript" src="${js_url_home}">//FIX</script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$(".nav a").on("click", function(){
-				   $(".nav").find(".active").removeClass("active");
-				   $(this).parent().addClass("active");
-				});
-			});
 			$(document).on('click','.navbar-collapse.in',function(e) {
 			    if( $(e.target).is('a') ) {
 			        $(this).collapse('hide');
