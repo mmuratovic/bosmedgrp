@@ -141,19 +141,21 @@
 								</div>
 								<div class="collapse navbar-collapse" id="bmg-navbar-collapse">
 									<ul class="nav navbar-nav navbar-right">
-										<li>
+										<li class="radioIcons">
 											<span id="liveSign" class="liveSignClass">LIVE</span>
 											<span id="playButton" class="iconSpec"><i class="fa-cog fa fa-play-circle-o fa-2x"><!-- icon --></i></span>
 										</li>
-										<li><a href="#">Radio Behar</a></li>
-										<li role="separator" class="divider divider-vertical"></li>
-										<li><a href="#/about">News</a></li>
-										<li role="separator" class="divider divider-vertical"></li>
-										<li><a href="#">Services</a></li>
-										<li role="separator" class="divider divider-vertical"></li>
-										<li><a href="#">Contact</a></li>
-										<li><span class="iconSpec"><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></span></li>
-										<li><span class="iconSpec"><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></span></li>
+										<li class="radioTab"><a href="#">Radio Behar</a></li>
+										<li class="divider divider-vertical"></li>
+										<li class="center"><a href="#/about">News</a></li>
+										<li class="divider divider-vertical"></li>
+										<li class="center"><a href="#">Services</a></li>
+										<li class="divider divider-vertical"></li>
+										<li class="center"><a href="#">Contact</a></li>
+										<li class="divider"></li>
+										<li class="iconFacebook"><span class="iconSpec"><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></span></li>
+										<li class="iconTwitter"><span class="iconSpec"><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></span></li>
+										<li class="iconLinkBMG"><span class="iconSpec"><a href="http://www.bmg.ba"><i class="fa-cog fa fa-external-link-square fa-2x"><!-- icon --></i></a></span></li>
 										<div class="playerRadio">
 											<audio controls="controls" id="radioBeharPlayer" > 
 												<source src="http://wew.birach.com:9008/;"></source>
@@ -174,7 +176,7 @@
 		        </div>
 		        <div id="footer-content">
 		        	<div class="max-page-width row">
-			        	<div class="col-md-4">
+			        	<div class="col-md-4 address-footer">
 			        		<div><i class="right-space-fa fa fa-envelope"><!-- icon --></i>${address}</div>
 			        		<div><i class="right-space-fa fa fa-phone-square"><!-- icon --></i> ${phone}</div>
 			        		<div><i class="right-space-fa fa fa-envelope-o"><!-- icon --></i> ${email}</div>

@@ -43,7 +43,7 @@ span {
 .logo {
 	text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
 	font-weight: 500;
-	color: white;
+	color: #f2ffff;
 	letter-spacing: 0pt;
 	word-spacing: -1pt;
 	font-size: 1.75em;
@@ -255,65 +255,6 @@ i:active, i:after {
   color: #ecf0f1;
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ecf0f1;
-    
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ecf0f1;
-    background-color: #071f3c;
-  }
-  
-  .navbar-default .navbar-brand {
-	  color: #ecf0f1;
-	  padding: 12px 0px 0px 15px;
-	}
-	
-	.navbar-default .navbar-toggle {
-		border-color: transparent;
-	}
-	
-	.navbar-collapse .nav > .divider-vertical {
-        display: none;
-     }
-     
-     .navbar-right .divider {
-		border-bottom: 1px solid #ffffff;
-		z-index: 2000;
-	}
-	
-	.iconSpec {
-	    display: inline-block;
-	    height: 30px;
-	    overflow: hidden;
-	    position: relative;
-	    width: 30px;
-	    margin-top: 0px;
-	    margin-left: 15px;
-	}
-	
-	.liveSignClass {
-		content: "LIVE";
-		color: red !important;
-		font-weight: bold;
-		font-size: 20px;
-	    display: inline-block;
-	    height: 30px;
-	    overflow: hidden;
-	    position: relative;
-	    margin-top: 8px;
-	    outline: none;
-	    cursor: pointer;
-	    margin-left: 15px;
-	    padding-right: 10px;
-	}
-
-}
-
 .navbar{ 
     background-image: none;
     margin-bottom: 0;
@@ -344,11 +285,116 @@ i:active, i:after {
     margin-top: 8px;
     outline: none;
     cursor: pointer;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
+.navbar-right {
+	margin-right: -10px;
+}
 
+/* only for mobile version - start */
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ecf0f1;
+    
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ecf0f1;
+    background-color: #071f3c;
+  }
+  
+  .navbar-default .navbar-brand {
+	  color: #ecf0f1;
+	  padding: 12px 0px 0px 15px;
+	}
+	
+	.navbar-default .navbar-toggle {
+		border-color: transparent;
+	}
+	
+	.navbar-collapse .nav > .divider-vertical {
+        z-index: 0;
+     }
+     
+     .navbar-right .divider {
+		border-bottom: 1px solid #ffffff;
+		z-index: 2000;
+	}
+	
+	
+	.iconSpec {
+	    display: inline-block;
+	    height: 30px;
+	    overflow: hidden;
+	    position: relative;
+	    width: 30px;
+	    margin-top: 0px;
+	    margin-left: 15px;
+	}
+	
+	span#playButton {
+		margin-bottom: 4px;
+		margin-top: 2px;
+	}
+	
+	.liveSignClass {
+		content: "LIVE";
+		color: red !important;
+		font-weight: bold;
+		font-size: 20px;
+	    display: inline-block;
+	    height: 30px;
+	    overflow: hidden;
+	    position: relative;
+	    margin-top: 5px;
+	    margin-bottom: 8px;
+	    outline: none;
+	    cursor: pointer;
+	    margin-left: 15px;
+	    padding-right: 10px;
+	}
+	
+  .nav > li.divider {
+	  width: 100%;
+	  height: 1px;
+	  margin: 0px;
+	  overflow: hidden;
+	  border-bottom: 1px solid #071f3c;
+	}
+	
+	.radioIcons{
+		margin-top: -5px;
+	}
+	.radioTab {
+		margin-top: -40px;
+		margin-left: 135px;
+		display: flex;
+	}
+	
+	.address-footer {
+		display: none;
+	}
+	
+	.iconFacebook {
+		margin-top: 6px;
+		margin-left: 100px;
+	}
+	
+	.iconTwitter {
+		margin-top: -30px;
+		margin-left: 140px;
+	}
+	
+	.iconLinkBMG {
+		margin-top: -30px;
+		margin-left: 180px;
+	}
 
+}
+/* only for mobile version - end */
 
 
 
