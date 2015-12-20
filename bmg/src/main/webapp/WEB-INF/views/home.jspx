@@ -142,7 +142,7 @@
 								<div class="collapse navbar-collapse" id="bmg-navbar-collapse">
 									<ul class="nav navbar-nav navbar-right">
 										<li>
-											<span id="liveSign"><!-- LIVE --></span>
+											<span id="liveSign" class="liveSignClass">LIVE</span>
 											<span id="playButton" class="iconSpec"><i class="fa-cog fa fa-play-circle-o fa-2x"><!-- icon --></i></span>
 										</li>
 										<li><a href="#">Radio Behar</a></li>

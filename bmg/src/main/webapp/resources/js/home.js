@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('#liveSign').hide();
 	$(".nav a").on("click", function(){
 		   $(".nav").find(".active").removeClass("active");
 		   $(this).parent().addClass("active");
@@ -19,7 +20,6 @@ $(document).ready(function() {
 	});
 	
 	/* calculation for radio Behar if it goes LIVE or not */
-	
 	var d_names = new Array("Sunday", "Monday", "Tuesday",
 			"Wednesday", "Thursday", "Friday", "Saturday");
 	var m_names = new Array("January", "February", "March", 
@@ -27,15 +27,17 @@ $(document).ready(function() {
 			"October", "November", "December");
 	var short_hours_months = new Array("January", "November", "December");
 	var num_hours = 3;
-	
-	function isRadioBeharLive(){
+	var isLive = false;
+	var curr_min;
+	function checkLiveStatus(){
 		var d = new Date();
 		utc = d.getTime() + (d.getTimezoneOffset() * 60000);
 		nd = new Date(utc + (3600000*(-6))); /* STL -6 */
 		var curr_day = nd.getDay();
 		var curr_month = nd.getMonth();
 		var curr_hour = nd.getHours();
-		var isLive = false;
+		curr_min = nd.getMinutes();
+		
 		var start = 17;
 		for(var month = 0; month < 3; month++){
 			if(m_names[curr_month] === short_hours_months[month]) 
@@ -49,14 +51,20 @@ $(document).ready(function() {
 				}
 			}
 		}
+	};
+	
+	function isRadioBeharLive(){ 
+		isLive = false;
+		checkLiveStatus();
+		setLiveStatus();
+	};	
 		
+	function setLiveStatus(){
 		if(isLive){
-			$('#liveSign').addClass('liveSignClass');
-			$('#liveSign').text('LIVE');
+			$('#liveSign').show();
 		}else{
-			if(!($("#liveSign").hasClass("liveSignClass"))){
-				$('#liveSign').removeClass('liveSignClass');
-				$('#liveSign').text('');
+			if($("#liveSign").length){
+				$('#liveSign').hide();
 			}
 		};
 	};
