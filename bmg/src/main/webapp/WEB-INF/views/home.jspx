@@ -126,7 +126,6 @@
 		
 		<body>
 			<div id="main-page">
-		
 				<div id="header-content" class="row">
 					<nav class="navbar navbar-fixed-top navbar-default">
 						<div class="max-page-width">
@@ -135,7 +134,7 @@
 									<span class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bmg-navbar-collapse" aria-expanded="false">
 										<i class="fa-cog fa fa-bars fa-2x"><!-- icon --></i>
 									</span>
-									<a class="navbar-brand middle-align" href="#">
+									<a class="navbar-brand middle-align" href="#/news">
 										<span class="logo">${logo}</span>
 									</a>
 								</div>
@@ -145,13 +144,13 @@
 											<span id="liveSign" class="liveSignClass">LIVE</span>
 											<span id="playButton" class="iconSpec"><i class="fa-cog fa fa-play-circle-o fa-2x"><!-- icon --></i></span>
 										</li>
-										<li class="radioTab"><a href="#">Radio Behar</a></li>
+										<li class="radioTab"><a href="#/radio">Radio Behar</a></li>
 										<li class="divider divider-vertical"></li>
-										<li class="center"><a href="#/about">News</a></li>
+										<li class="center"><a href="#/news">News</a></li>
 										<li class="divider divider-vertical"></li>
-										<li class="center"><a href="#">Services</a></li>
+										<li class="center"><a href="#/services">Services</a></li>
 										<li class="divider divider-vertical"></li>
-										<li class="center"><a href="#">Contact</a></li>
+										<li class="center"><a href="#/contact">Contact</a></li>
 										<li class="divider"></li>
 										<li class="iconFacebook"><span class="iconSpec"><a href="http://www.facebook.com/pages/Radio-Behar-St-Louis/145349085478796"><i class="fa-cog fa fa-facebook-square fa-2x"><!-- icon --></i></a></span></li>
 										<li class="iconTwitter"><span class="iconSpec"><a href="http://www.twitter.com/BosnianMediaGr"><i class="fa-cog fa fa-twitter-square fa-2x"><!-- icon --></i></a></span></li>
@@ -167,11 +166,12 @@
 						</div>
 					</nav>
 				</div>
-		           
 				<div id="main-content" class="max-page-width row" ng-controller="MainController">
 		            <div class="container-fluid">
-		                <div ui-view="about"><!-- FIX --></div>
-		                <div ui-view="latest"><!-- FIX --></div>
+		                <div ui-view="contact"><!-- FIX --></div>
+		                <div ui-view="news"><!-- FIX --></div>
+		                <div ui-view="radio"><!-- FIX --></div>
+		                <div ui-view="services"><!-- FIX --></div>
 		            </div>
 		        </div>
 		        <div id="footer-content">

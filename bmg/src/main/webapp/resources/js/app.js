@@ -24,11 +24,13 @@ bmgApp.constant('ITEMS_PER_PAGE', 6)
 bmgApp.config([ '$translateProvider', '$routeProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$provide',
     function($translateProvider, $routeProvider, $httpProvider, $stateProvider, $urlRouterProvider, $provide){
 
-	$urlRouterProvider.otherwise("/latest");
+	$urlRouterProvider.otherwise("/news");
 
     $stateProvider
-        .state("latest", { url: "/latest", views: { "latest":{templateUrl: 'resources/partials/latestNews.html'}}})
-        .state("about", { url: "/about", views: { "about":{templateUrl: 'resources/partials/about.html'}}});
+        .state("news", { url: "/news", views: { "news":{templateUrl: 'resources/partials/news.html'}}})
+        .state("radio", { url: "/radio", views: { "radio":{templateUrl: 'resources/partials/radio.html'}}})
+        .state("services", { url: "/services", views: { "services":{templateUrl: 'resources/partials/services.html'}}})
+        .state("contact", { url: "/contact", views: { "contact":{templateUrl: 'resources/partials/contact.html'}}});
       /*  .state("tabs_english", { url:"/en", views: { "tabs_english": {templateUrl:"resources/partials/tabs_English.html"}}})
        
         .state("tabs_english.world", { url: "/details", templateUrl: "resources/partials/worldNews.html" })

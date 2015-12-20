@@ -28,7 +28,6 @@ $(document).ready(function() {
 	var short_hours_months = new Array("January", "November", "December");
 	var num_hours = 3;
 	var isLive = false;
-	var curr_min;
 	function checkLiveStatus(){
 		var d = new Date();
 		utc = d.getTime() + (d.getTimezoneOffset() * 60000);
@@ -36,7 +35,6 @@ $(document).ready(function() {
 		var curr_day = nd.getDay();
 		var curr_month = nd.getMonth();
 		var curr_hour = nd.getHours();
-		curr_min = nd.getMinutes();
 		
 		var start = 17;
 		for(var month = 0; month < 3; month++){
