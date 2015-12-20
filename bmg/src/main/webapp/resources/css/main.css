@@ -58,6 +58,10 @@ span {
 	padding-bottom: 15px;
 }
 
+a.navbar-brand {
+	margin-top: -3px;
+}
+
 .row-border{
 	box-shadow: 5px 0px 5px #888888;
 }
@@ -391,6 +395,10 @@ i:active, i:after {
 	.iconLinkBMG {
 		margin-top: -30px;
 		margin-left: 180px;
+	}
+	
+	a.navbar-brand {
+		margin-top: 0px;
 	}
 
 }

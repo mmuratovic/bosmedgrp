@@ -38,7 +38,7 @@ $(document).ready(function() {
 		var curr_hour = nd.getHours();
 		curr_min = nd.getMinutes();
 		
-		var start = 17;
+		var start = 15;
 		for(var month = 0; month < 3; month++){
 			if(m_names[curr_month] === short_hours_months[month]) 
 				num_hours = 2;
